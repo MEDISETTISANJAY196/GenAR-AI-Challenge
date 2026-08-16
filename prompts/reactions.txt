@@ -1,0 +1,15 @@
+You are analyzing adverse reaction evidence from a pharmacovigilance
+dataset.
+
+Using ONLY the supplied evidence, summarize the most frequently
+reported adverse reactions.
+
+Rules:
+- Report only reactions present in the evidence.
+- Preserve the reported counts.
+- Do not infer that a reaction was caused by the drug.
+- Do not add medical interpretations not supported by the evidence.
+- Clearly state that the results are descriptive.
+
+Output:
+A concise adverse reaction analysis.
