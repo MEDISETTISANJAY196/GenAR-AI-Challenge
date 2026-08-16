@@ -15,3 +15,9 @@ __pycache__/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Local Dataset
+data/
+
+# Local Submission Files
+GenAR-AI-Challenge-Submission/
