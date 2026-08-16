@@ -273,7 +273,7 @@ elif page == "Trends":
 
 
 # -----------------------------------------
-# GENERATED REPORT
+# GENERATED REPORT + HUMAN REVIEW
 # -----------------------------------------
 
 elif page == "Generated Report":
@@ -282,8 +282,65 @@ elif page == "Generated Report":
 
     st.markdown(report)
 
+    st.divider()
+
+    # -----------------------------------------
+    # HUMAN REVIEW
+    # -----------------------------------------
+
+    st.header("Human Review & Approval")
+
+    reviewer_name = st.text_input(
+        "Reviewer Name"
+    )
+
+    review_comments = st.text_area(
+        "Reviewer Comments"
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        if st.button("Approve Report"):
+
+            if reviewer_name.strip():
+
+                st.success(
+                    f"Report approved by {reviewer_name}"
+                )
+
+                if review_comments.strip():
+                    st.info(
+                        f"Reviewer Comments: {review_comments}"
+                    )
+
+            else:
+                st.warning(
+                    "Please enter the reviewer name before approval."
+                )
+
+    with col2:
+
+        if st.button("Flag for Review"):
+
+            st.warning(
+                "Report has been flagged for additional review."
+            )
+
+            if review_comments.strip():
+                st.info(
+                    f"Reviewer Comments: {review_comments}"
+                )
+
+    st.divider()
+
+    # -----------------------------------------
+    # DOWNLOAD REPORT
+    # -----------------------------------------
+
     st.download_button(
-        label="⬇️ Download Generated Report",
+        label="Download Generated Report",
         data=report,
         file_name="Bisoprolol_PADER_Report.md",
         mime="text/markdown"
