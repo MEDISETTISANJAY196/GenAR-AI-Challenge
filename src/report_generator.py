@@ -1,5 +1,6 @@
 import json
 import os
+from llm import generate_safety_narrative
 
 
 # -----------------------------------------
@@ -13,7 +14,14 @@ with open(input_file, "r", encoding="utf-8") as file:
 
 
 # -----------------------------------------
-# 2. EXTRACT DATA
+# 2. GENERATE SAFETY NARRATIVE
+# -----------------------------------------
+
+ai_narrative = generate_safety_narrative(evidence)
+
+
+# -----------------------------------------
+# 3. EXTRACT DATA
 # -----------------------------------------
 
 drug = evidence["metadata"]["drug"]
@@ -35,10 +43,11 @@ non_serious_cases = case_data["non_serious_cases"]
 
 
 # -----------------------------------------
-# 3. HELPER FUNCTION FOR MARKDOWN TABLES
+# 4. HELPER FUNCTION FOR MARKDOWN TABLES
 # -----------------------------------------
 
 def create_table(data, column1, column2):
+
     table = f"| {column1} | {column2} |\n"
     table += "|---|---:|\n"
 
@@ -49,10 +58,11 @@ def create_table(data, column1, column2):
 
 
 # -----------------------------------------
-# 4. CREATE REPORT
+# 5. CREATE REPORT
 # -----------------------------------------
 
 report = f"""# Periodic Adverse Drug Experience Report
+
 
 ## 1. Product Information
 
@@ -159,7 +169,12 @@ The following reaction terms were observed among cases classified as serious.
 )}
 
 
-## 11. Key Observations
+## 11. AI-Generated Safety Narrative
+
+{ai_narrative}
+
+
+## 12. Key Observations
 
 - The analysis identified **{total_cases} unique safety cases**.
 - **{serious_cases} cases** were classified as serious.
@@ -170,17 +185,19 @@ The following reaction terms were observed among cases classified as serious.
   {end_date}**.
 
 
-## 12. Important Limitations
+## 13. Important Limitations
 
 {evidence["metadata"]["note"]}
 
 This report is based only on the supplied dataset and deterministic
 analysis. Reported events do not establish causality between
-{drug} and any adverse reaction. The reported counts should not be
-interpreted as incidence rates or estimates of risk.
+{drug} and any adverse reaction.
+
+The reported counts should not be interpreted as incidence rates or
+estimates of risk.
 
 
-## 13. Conclusion
+## 14. Conclusion
 
 This report provides a descriptive summary of the supplied ICSR safety
 data for **{drug}** during the defined reporting period.
@@ -192,7 +209,7 @@ required before making regulatory or causal conclusions.
 
 
 # -----------------------------------------
-# 5. SAVE REPORT
+# 6. SAVE REPORT
 # -----------------------------------------
 
 os.makedirs("output", exist_ok=True)
@@ -204,7 +221,7 @@ with open(output_file, "w", encoding="utf-8") as file:
 
 
 # -----------------------------------------
-# 6. SUCCESS MESSAGE
+# 7. SUCCESS MESSAGE
 # -----------------------------------------
 
 print("\n===================================")
@@ -215,5 +232,7 @@ print(f"\nDrug: {drug}")
 print(f"Total Unique Cases: {total_cases}")
 print(f"Reporting Period: {start_date} to {end_date}")
 
-print(f"\nReport saved to:")
+print("\nAI Safety Narrative: Generated Successfully")
+
+print("\nReport saved to:")
 print(output_file)

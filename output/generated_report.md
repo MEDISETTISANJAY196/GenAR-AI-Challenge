@@ -1,5 +1,6 @@
 # Periodic Adverse Drug Experience Report
 
+
 ## 1. Product Information
 
 **Drug:** Bisoprolol
@@ -150,7 +151,31 @@ The following reaction terms were observed among cases classified as serious.
 
 
 
-## 11. Key Observations
+## 11. AI-Generated Safety Narrative
+
+
+## AI-Generated Safety Narrative
+
+Based on the approved evidence generated from the supplied ICSR dataset,
+the analysis identified 1024 unique safety cases.
+
+Of these cases, 1023 were classified as serious and
+1 were classified as non-serious.
+
+The most frequently reported reaction was Acute kidney injury, with
+22 reported records.
+
+The patient age distribution indicates that the largest number of
+reported cases occurred in the available age groups shown in the
+evidence.
+
+These findings are descriptive observations based only on the supplied
+dataset and should not be interpreted as evidence of causality,
+incidence, or a confirmed safety signal.
+
+
+
+## 12. Key Observations
 
 - The analysis identified **1024 unique safety cases**.
 - **1023 cases** were classified as serious.
@@ -161,17 +186,19 @@ The following reaction terms were observed among cases classified as serious.
   2025-12-26**.
 
 
-## 12. Important Limitations
+## 13. Important Limitations
 
 This evidence contains descriptive findings from the supplied dataset. Counts represent reported cases or reaction records and should not be interpreted as incidence rates or causal conclusions.
 
 This report is based only on the supplied dataset and deterministic
 analysis. Reported events do not establish causality between
-Bisoprolol and any adverse reaction. The reported counts should not be
-interpreted as incidence rates or estimates of risk.
+Bisoprolol and any adverse reaction.
+
+The reported counts should not be interpreted as incidence rates or
+estimates of risk.
 
 
-## 13. Conclusion
+## 14. Conclusion
 
 This report provides a descriptive summary of the supplied ICSR safety
 data for **Bisoprolol** during the defined reporting period.
