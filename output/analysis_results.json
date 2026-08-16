@@ -1,0 +1,93 @@
+{
+    "dataset_summary": {
+        "total_rows": 1068,
+        "total_unique_cases": 1024,
+        "reporting_period": {
+            "start_date": "2024-12-27",
+            "end_date": "2025-12-26"
+        }
+    },
+    "case_analysis": {
+        "serious_cases": 1023,
+        "non_serious_cases": 1
+    },
+    "patient_analysis": {
+        "sex_distribution": {
+            "female": 503,
+            "male": 493,
+            "unknown": 28
+        },
+        "age_distribution": {
+            "75+": 408,
+            "60-74": 355,
+            "45-59": 116,
+            "Unknown": 84,
+            "30-44": 34,
+            "0-17": 16,
+            "18-29": 11
+        },
+        "country_distribution": {
+            "eu": 325,
+            "united kingdom": 278,
+            "france": 187,
+            "canada": 55,
+            "italy": 52,
+            "germany": 39,
+            "spain": 26,
+            "poland": 21,
+            "portugal": 9,
+            "unknown": 7
+        }
+    },
+    "reaction_analysis": {
+        "top_reactions": {
+            "Acute kidney injury": 22,
+            "Drug ineffective": 12,
+            "Cerebral haemorrhage": 7,
+            "Hyponatraemia": 6,
+            "Cholestasis": 6,
+            "Hypokalaemia": 6,
+            "Hepatic cytolysis": 5,
+            "Drug interaction": 5,
+            "Joint swelling": 5,
+            "Muscle spasms": 4
+        },
+        "top_serious_reactions": {
+            "Acute kidney injury": 22,
+            "Drug ineffective": 12,
+            "Cerebral haemorrhage": 7,
+            "Hyponatraemia": 6,
+            "Cholestasis": 6,
+            "Hypokalaemia": 6,
+            "Hepatic cytolysis": 5,
+            "Drug interaction": 5,
+            "Joint swelling": 5,
+            "Muscle spasms": 4
+        },
+        "outcome_distribution": {
+            "recovered/resolved": 1347,
+            "unknown": 1135,
+            "not recovered/not resolved/ongoing": 569,
+            "recovering/resolving": 420,
+            "fatal": 137,
+            "recovered/resolved with sequelae": 34
+        }
+    },
+    "trend_analysis": {
+        "monthly_case_counts": {
+            "2024-12": 21,
+            "2025-01": 75,
+            "2025-02": 94,
+            "2025-03": 83,
+            "2025-04": 78,
+            "2025-05": 80,
+            "2025-06": 84,
+            "2025-07": 109,
+            "2025-08": 64,
+            "2025-09": 76,
+            "2025-10": 102,
+            "2025-11": 75,
+            "2025-12": 83
+        }
+    }
+}
